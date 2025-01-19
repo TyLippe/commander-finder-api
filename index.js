@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 // Import routers
+const loginRouter = require("./routes/login");
 const commanderRouter = require("./routes/commanders");
 const setRouter = require("./routes/sets");
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // Use routers
+app.use(loginRouter);
 app.use(commanderRouter);
 app.use(setRouter);
 
