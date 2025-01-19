@@ -22,3 +22,7 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.get(PORT, (req, res) => {
+  res.send("Commander Finder API is live!");
+});
