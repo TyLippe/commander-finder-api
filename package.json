@@ -1,0 +1,19 @@
+{
+  "name": "commander-finder-api",
+  "version": "1.0.0",
+  "description": "rest api used for commander finder web app",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7"
+  }
+}
