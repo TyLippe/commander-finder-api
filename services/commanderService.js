@@ -52,6 +52,27 @@ class CommanderService {
       throw error;
     }
   }
+
+  async getRandomCommanders(count) {
+    const headers = { "User-Agent": "CommanderCollector/1.0" };
+
+    try {
+      const randomCards = [];
+      const params = { q: "is:commander legal:commander" };
+
+      for (let i = 0; i < count; i++) {
+        const response = await axios.get(this.apiUrl + "/cards/random", {
+          headers,
+          params,
+        });
+        randomCards.push(response.data);
+      }
+      return randomCards;
+    } catch (error) {
+      console.error("Error fetching commanders:", error);
+      throw error;
+    }
+  }
 }
 
 module.exports = CommanderService;

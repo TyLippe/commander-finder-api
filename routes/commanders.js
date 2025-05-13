@@ -39,4 +39,20 @@ router.post(baseURL + "/filter", (req, res) => {
     });
 });
 
+router.post(baseURL + "/random", (req, res) => {
+  const service = new CommanderService();
+
+  const count = req.body.count;
+
+  service
+    .getRandomCommanders(count)
+    .then((commanders) => {
+      res.json(commanders);
+    })
+    .catch((error) => {
+      console.error("Error fetching commanders:", error);
+      res.status(500).send("Error fetching commanders");
+    });
+});
+
 module.exports = router;
